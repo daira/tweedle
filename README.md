@@ -36,15 +36,25 @@ use `--sequential`.)
 Prerequisites:
 
 * apt-get install sagemath
-* pip install sortedcontainers
+* pip3 install sortedcontainers
 
 Run ``sage verify.sage Ep`` and ``sage verify.sage Eq``; or ``./run.sh`` to run both
 and also print out the results.
 
-When ``amicable.sage`` is used with the ``--isogenies`` option, the output includes
-isogenies suitable for use with the "simplified SWU" method for hashing to an
-elliptic curve. This is based on code from Appendix A of
-[Wahby and Boneh 2019](https://eprint.iacr.org/2019/403.pdf). Note that simplified SWU
-is not necessarily the preferred method to hash to a given curve. In particular it
-probably is not for the Tweedle curves; they only have suitable isogenies of degree 23,
-which is rather large.
+``amicable.sage`` also outputs isogenies (of degree up to ``ISOGENY_DEGREE_MAX``) suitable
+for use with the "simplified SWU" method for hashing to an elliptic curve. This is based
+on code from Appendix A of [Wahby and Boneh 2019](https://eprint.iacr.org/2019/403.pdf).
+Note that simplified SWU is not necessarily the preferred method to hash to a given curve.
+In particular it probably is not for the Tweedle curves; they only have suitable isogenies
+of degree 23, which is rather large.
+
+To check the correctness of the endomorphism optimization described in the Halo paper, run
+``python3 injectivitylemma.py`` and ``python3 checksumsets.py``. To also generate animations
+showing the minimum distances between multiples of ζ used in the proof, run ``./animation.sh``.
+
+``animation.sh`` has the following prerequisites:
+
+* apt-get install ffmpeg ffcvt
+* pip3 install bintrees Pillow
+
+``checksumsets.py`` on its own only requires the ``bintrees`` Python package.
