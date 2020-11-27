@@ -36,7 +36,6 @@ use `--sequential`.)
 Prerequisites:
 
 * apt-get install sagemath
-* pip3 install sortedcontainers
 
 Run ``sage verify.sage Ep`` and ``sage verify.sage Eq``; or ``./run.sh`` to run both
 and also print out the results.
