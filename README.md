@@ -33,6 +33,10 @@ use `--sequential`.)
 
 **The cycle we call Tweedledum/Tweedledee has changed from the initial (September 2019) draft of the Halo paper.**
 
+Note that although there is no known security problem with the Tweedle cycle, there are efficiency
+and interoperability reasons to prefer the [Pasta cycle](https://github.com/zcash/pasta), as
+explained in [this blog post](https://electriccoin.co/blog/the-pasta-curves-for-halo-2-and-beyond/).
+
 Prerequisites:
 
 * ``apt-get install sagemath``
